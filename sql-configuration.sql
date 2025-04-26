@@ -54,7 +54,7 @@ CREATE TABLE Payments (
 CREATE TABLE Supplier_Ratings (
     rating_id INT AUTO_INCREMENT PRIMARY KEY,
     supplier_id INT,
-    rating INT,                 -- 1-5 scale
+    rating INT,                 
     comments TEXT,
     rating_date DATE,
     FOREIGN KEY (supplier_id) REFERENCES Suppliers(supplier_id)
