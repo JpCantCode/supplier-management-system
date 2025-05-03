@@ -13,3 +13,11 @@ CREATE TABLE Users (
     
 );
 ALTER TABLE Users ADD role ENUM('user', 'admin') DEFAULT 'user';
+ALTER TABLE Users ADD profile_picture VARCHAR(255) DEFAULT 'default.png';
+CREATE TABLE AccessLogs (
+    log_id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT,
+    action VARCHAR(255),
+    log_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES Users(user_id)
+);
